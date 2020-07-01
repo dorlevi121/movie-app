@@ -18,6 +18,7 @@ import { MovieDetailsComponent } from './movie-details/movie-details.component';
 import { RecommendedMoviesComponent } from './movie-details/recommended-movies/recommended-movies.component';
 import { MovieContentComponent } from './movie-details/movie-content/movie-content.component';
 import { NgCircleProgressModule } from 'ng-circle-progress';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -39,6 +40,7 @@ import { NgCircleProgressModule } from 'ng-circle-progress';
     AppRoutingModule,
     InfiniteScrollModule,
     FormsModule,
+    BrowserAnimationsModule,
     NgCircleProgressModule.forRoot({
       "radius": 60,
       "outerStrokeWidth": 10,

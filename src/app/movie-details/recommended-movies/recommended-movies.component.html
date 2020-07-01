@@ -1,8 +1,8 @@
 <div class="recommended-movies">
   <div class="arrow" (click)="onClickArrow('next')">&#8249;</div>
-  <div class="movies-list">
-    <div class="movies" *ngFor="let movie of movies">
-      <app-movie  [movie]="movie"></app-movie>
+  <div [@carouselImg]="state" class="movies-list">
+    <div  class="movies" *ngFor="let movie of movies">
+      <app-movie [movie]="movie"></app-movie>
     </div>
     <div class="dots">
       <div class="arrow" (click)="onClickArrow('next')">&#8249;</div>

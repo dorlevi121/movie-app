@@ -1,4 +1,5 @@
 <div
+  [@carouselImg]="state"
   *ngIf="movie"
   style="background-image: url({{ backdropImageBaseUrl }});"
   class="backdrop"
@@ -17,7 +18,7 @@
         <span> &bull; {{ movie.runtime }} min</span>
 
         <div class="score">
-          <div>
+          <div class="circle-progress">
             <circle-progress
               [percent]="rating"
               [space]="0"
@@ -31,7 +32,7 @@
               [titleFontSize]="10"
               [maxPercent]="100"
               [showSubtitle]="false"
-              [renderOnClick]= 'false'
+              [renderOnClick]="false"
               [unitsFontSize]="15"
               [unitsColor]="'#e9e9e9'"
               [titleColor]="'#e9e9e9'"

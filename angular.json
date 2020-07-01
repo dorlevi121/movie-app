@@ -30,8 +30,7 @@
             "styles": [
               "src/styles.scss"
             ],
-            "scripts": [
-            ]
+            "scripts": []
           },
           "configurations": {
             "production": {
@@ -122,8 +121,17 @@
               "devServerTarget": "movie-app:serve:production"
             }
           }
+        },
+        "deploy": {
+          "builder": "@netlify-builder/deploy:deploy",
+          "options": {
+            "outputPath": "dist/movie-app",
+            "netlifyToken": "741d105aa692a46cebb7e0e061f5b77244c4c83cb3ae7ca22cfcddbc904400dd",
+            "siteId": "00926736-f9d8-4866-a62a-dc473b1e09c9"
+          }
         }
       }
-    }},
+    }
+  },
   "defaultProject": "movie-app"
 }

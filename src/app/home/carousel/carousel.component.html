@@ -1,4 +1,5 @@
 <div
+[@carouselImg]="state"
   *ngIf="topRatedMovies.length"
   style="background-image: url({{ backdropImageBaseUrl }}{{
     topRatedMovies[currentMovie].backdrop_path

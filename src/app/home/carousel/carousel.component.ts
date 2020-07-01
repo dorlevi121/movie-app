@@ -1,20 +1,40 @@
 import { Component, OnInit } from '@angular/core';
 import { StorageService } from 'src/app/system/services/storage.service';
 import { faInfoCircle } from '@fortawesome/free-solid-svg-icons';
+import { trigger, state, style, transition, animate, keyframes } from '@angular/animations';
 
 @Component({
   selector: 'app-carousel',
   templateUrl: './carousel.component.html',
-  styleUrls: ['./carousel.component.scss']
+  styleUrls: ['./carousel.component.scss'],
+  animations: [
+    trigger('carouselImg', [
+      state('0', style({
+
+      })),
+      transition('0 <=> 1', [
+        animate(500, keyframes([
+          style({
+            opacity: 0,
+          }),
+
+          style({
+            opacity: 1,
+          })
+        ]))
+      ])
+    ])
+  ]
 })
 export class CarouselComponent implements OnInit {
+  state = '0';
   topRatedMovies = [];
   currentMovie = 0;
   backdropImageBaseUrl: string;
   faInfo = faInfoCircle;
 
   constructor(private storageService: StorageService) {
-    this.backdropImageBaseUrl = storageService.getBackdropImageBaseUrl()
+    this.backdropImageBaseUrl = storageService.getBackdropImageBaseUrl();
   }
 
 
@@ -35,7 +55,7 @@ export class CarouselComponent implements OnInit {
       else
         this.currentMovie = this.topRatedMovies.length - 1;
     }
-
+    this.state === '0' ? this.state = '1' : this.state = '0';
   }
 
 }

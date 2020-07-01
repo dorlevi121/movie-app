@@ -1,6 +1,5 @@
 @import "../../system/style/main.scss";
 
-
 .backdrop {
   border-bottom: 1px solid rgba(16.47%, 29.41%, 15.29%, 1);
   background-position: right 0px top;
@@ -12,7 +11,7 @@
 
   @include respond(phone) {
     height: 92vh;
- }
+  }
 }
 
 .color-overlay {
@@ -20,6 +19,10 @@
   overflow: hidden;
   height: 100%;
   z-index: 2;
+
+  @include respond(phone) {
+    background: rgba(39, 62, 84, 0.72);
+  }
 
   & .info {
     width: 70vw;
@@ -33,9 +36,7 @@
     @include respond(phone) {
       padding-top: 0;
       width: 100%;
-      height: 92vh;
-
-   }
+    }
 
     & .poster {
       border-width: 0px;
@@ -50,7 +51,8 @@
       }
 
       @include respond(phone) {
-       display: none;     }
+        display: none;
+      }
     }
 
     & .content {
@@ -77,6 +79,14 @@
         align-items: center;
         padding-top: 20px;
         padding-bottom: 20px;
+
+        & .circle-progress {
+          transition: all 0.3s ease-in-out;
+          &:hover {
+            transform: scale(1.1);
+          }
+        }
+
         & span {
           padding-left: 10px;
           font-weight: 700;
@@ -96,7 +106,7 @@
 
           @include respond(phone) {
             width: 95%;
-         }
+          }
         }
       }
     }
