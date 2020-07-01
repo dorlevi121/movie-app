@@ -1,0 +1,66 @@
+@import "../../system/style/main.scss";
+
+.movies-list {
+  width: 70vw;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  @include respond(phone) {
+    width: 100%;
+  }
+}
+
+.movies-page {
+  margin: auto;
+}
+
+.load-more-button {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+button,
+button::after {
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+button {
+  background: none;
+  border: 3px solid $primary-color;
+  border-radius: 5px;
+  color: $primary-color;
+  display: block;
+  font-size: 1em;
+  font-weight: bold;
+  margin: auto;
+  padding: 10px 15px;
+  position: relative;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+button::before,
+button::after {
+  background: $primary-color;
+  content: "";
+  position: absolute;
+  z-index: -1;
+}
+
+button::after {
+  height: 100%;
+  left: 0;
+  top: 0;
+  width: 0;
+}
+
+button:hover {
+  color: $white;
+}
+
+button:hover::after {
+  width: 100%;
+}

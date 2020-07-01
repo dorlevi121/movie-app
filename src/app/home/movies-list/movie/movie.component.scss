@@ -1,0 +1,117 @@
+@import "../../../system/style/main.scss";
+
+.container {
+  position: relative;
+  width: 50%;
+
+  @include respond(phone) {
+    width: 40%;
+  }
+
+  & img {
+    margin: 20px;
+    width: 200px;
+    display: block;
+    height: auto;
+    border-radius: 5px;
+    box-shadow: rgb(204, 204, 204) 3px 3px 10px 6px;
+    transition: all 0.3s ease-in-out;
+
+    @include respond(phone) {
+      width: 150px;
+      margin: 10px;
+    }
+  }
+
+  & .overlay {
+    position: absolute;
+    bottom: 100%;
+    left: 20px;
+    right: 0;
+    background-color: rgba($color: black, $alpha: 0.5);
+    overflow: hidden;
+    width: 200px;
+    height: 0;
+    transition: 0.5s ease;
+    border-radius: 5px;
+
+    @include respond(phone) {
+      width: 150px;
+      left: 10px;
+    }
+  }
+
+  &:hover .overlay {
+    bottom: 0;
+    height: 100%;
+  }
+
+  & .text {
+    width: 100%;
+    font-size: $small-size;
+    color: white;
+
+    @include respond(phone) {
+      top: 40%;
+      font-size: 0.7rem;
+      & p {
+        margin: 5px;
+      }
+    }
+
+    & .title {
+      font-weight: 600;
+      font-size: 1rem;
+      text-align: center;
+
+      @include respond(phone) {
+        font-size: $small-size;
+      }
+    }
+
+    & .content {
+      font-weight: 100;
+      padding-left: 30px;
+
+      @include respond(phone) {
+        padding-left: 15px;
+      }
+
+      & span {
+        font-weight: 600;
+      }
+    }
+
+    & .details-button {
+      width: 80%;
+      margin: auto;
+      position: absolute;
+      left: 20px;
+      top: 250px;
+
+      @include respond(phone) {
+        width: 100%;
+        left: 5px;
+        top: 190px;
+      }
+
+      & a {
+        color: inherit;
+        font: inherit;
+        font-weight: 100;
+        cursor: pointer;
+        text-decoration: none; /* no underline */
+        border: 1px solid $white;
+        border-radius: 5px;
+        text-align: center;
+        padding: 5px;
+        padding-left: 20%;
+        padding-right: 20%;
+
+        @include respond(phone) {
+          font-size: 0.7rem;
+        }
+      }
+    }
+  }
+}

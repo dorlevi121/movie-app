@@ -1,0 +1,22 @@
+<div
+  *ngIf="topRatedMovies.length"
+  style="background-image: url({{ backdropImageBaseUrl }}{{
+    topRatedMovies[currentMovie].backdrop_path
+  }});"
+  class="carousel"
+>
+  <div class="arrows">
+    <div class="arrow" (click)="onClickArrow('next')">&#8249;</div>
+    <div class="arrow" (click)="onClickArrow('prev')">&#8250;</div>
+  </div>
+  <div class="content">
+    <p class="title">{{ topRatedMovies[currentMovie].title }}</p>
+    <div class="overview">
+      <p>
+        {{ topRatedMovies[currentMovie].overview.substring(0, 200) + "..." }}
+      </p>
+      <fa-icon [routerLink]="[topRatedMovies[currentMovie].id]" class="info-icon" [icon]="faInfo"></fa-icon>
+
+    </div>
+  </div>
+</div>

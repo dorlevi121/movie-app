@@ -1,0 +1,44 @@
+<div class="recommended-movies">
+  <div class="arrow" (click)="onClickArrow('next')">&#8249;</div>
+  <div class="movies-list">
+    <div class="movies" *ngFor="let movie of movies">
+      <app-movie  [movie]="movie"></app-movie>
+    </div>
+    <div class="dots">
+      <div class="arrow" (click)="onClickArrow('next')">&#8249;</div>
+
+      <span
+        *ngIf="numberOfMovieTOShow === 4"
+        [ngStyle]="{
+          'background-color':
+            currentMovie === 15 || currentMovie === 16 ? '#032541' : '#bbb'
+        }"
+      ></span>
+      <span
+        [ngStyle]="{
+          'background-color':
+            currentMovie === 15 || currentMovie === 12 ? '#032541' : '#bbb'
+        }"
+      ></span>
+      <span
+        [ngStyle]="{
+          'background-color':
+            currentMovie === 10 || currentMovie === 8 ? '#032541' : '#bbb'
+        }"
+      ></span>
+      <span
+        [ngStyle]="{
+          'background-color':
+            currentMovie === 5 || currentMovie === 4 ? '#032541' : '#bbb'
+        }"
+      ></span>
+      <span
+        [ngStyle]="{
+          'background-color': currentMovie === 0 ? '#032541' : '#bbb'
+        }"
+      ></span>
+      <div class="arrow" (click)="onClickArrow('prev')">&#8250;</div>
+    </div>
+  </div>
+  <div class="arrow" (click)="onClickArrow('prev')">&#8250;</div>
+</div>

@@ -1,0 +1,78 @@
+@import "../../system/style/main.scss";
+
+.recommended-movies {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: 3.2s ease 0s 1 normal none running fade;
+
+  & .arrow {
+    cursor: pointer;
+    color: rgba($color: $primary-color, $alpha: 0.6);
+    font-size: 5rem;
+    transition: all 0.2s ease-in-out;
+
+    &:hover {
+      color: rgba($color: $primary-color, $alpha: 1);
+    }
+
+    @include respond(phone) {
+      display: none;
+    }
+  }
+
+  & .movies-list {
+    width: 70vw;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+
+    @include respond(phone) {
+      width: 100%;
+    }
+
+    & .dots {
+      width: 100px;
+      justify-content: space-around;
+      display: flex;
+
+      @include respond(phone) {
+        width: 60%;
+        align-items: center;
+      }
+
+      & span {
+        height: 15px;
+        width: 15px;
+        border-radius: 50%;
+        display: inline-block;
+        transition: all 0.5s ease-in-out;
+
+        @include respond(phone) {
+          margin-top: 15px;
+        }
+      }
+
+      & .arrow {
+        display: none;
+        cursor: pointer;
+        color: rgba($color: $primary-color, $alpha: 0.6);
+        font-size: 2.3rem;
+        transition: all 0.2s ease-in-out;
+
+        &:hover {
+          color: rgba($color: $primary-color, $alpha: 1);
+        }
+
+        @include respond(phone) {
+          display: inline-block;
+        }
+      }
+
+    }
+  }
+
+  & .movies-page {
+    margin: auto;
+  }
+}

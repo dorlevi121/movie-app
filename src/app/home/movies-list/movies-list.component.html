@@ -1,0 +1,18 @@
+<!-- <h1 >{{ listName }}
+  <button class="btn btn-info d-flex ml-auto p-2"(click)="sortList()">Sort Alphabetically</button></h1> -->
+<div
+  class="search-results"
+  infiniteScroll
+  [infiniteScrollDistance]="2"
+  [infiniteScrollThrottle]="50"
+  (scrolled)="onScroll()"
+>
+  <div class="movies-list">
+    <div class="movies-page" *ngFor="let movie of moviesList">
+      <app-movie [movie]="movie"></app-movie>
+    </div>
+  </div>
+  <div *ngIf="page < 2 && !searchMode" class="load-more-button">
+    <button (click)="loadMoreMovies()">Load More</button>
+  </div>
+</div>

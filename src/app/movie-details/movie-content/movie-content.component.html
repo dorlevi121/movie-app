@@ -1,0 +1,56 @@
+<div
+  *ngIf="movie"
+  style="background-image: url({{ backdropImageBaseUrl }});"
+  class="backdrop"
+>
+  <div class="color-overlay">
+    <div class="info">
+      <img [src]="posterUrl" alt="" class="poster" />
+      <div class="content">
+        <p class="title">
+          {{ movie.title }}
+          <span style="font-weight: 300;"
+            >({{ movie.release_date.substring(0, 4) }})
+          </span>
+        </p>
+        <p class="genres" *ngFor="let genre of genre">{{ genre.name }}</p>
+        <span> &bull; {{ movie.runtime }} min</span>
+
+        <div class="score">
+          <div>
+            <circle-progress
+              [percent]="rating"
+              [space]="0"
+              [radius]="30"
+              [outerStrokeWidth]="5"
+              [innerStrokeWidth]="2"
+              [outerStrokeColor]="'#4882c2'"
+              [innerStrokeColor]="'#e9e9e9'"
+              [animation]="true"
+              [animationDuration]="1500"
+              [titleFontSize]="10"
+              [maxPercent]="100"
+              [showSubtitle]="false"
+              [renderOnClick]= 'false'
+              [unitsFontSize]="15"
+              [unitsColor]="'#e9e9e9'"
+              [titleColor]="'#e9e9e9'"
+              [titleFontSize]="20"
+              [titleFontWeight]="700"
+            ></circle-progress>
+          </div>
+
+          <span
+            >Users <br />
+            Score</span
+          >
+        </div>
+
+        <div class="overview">
+          <h3>Overview</h3>
+          <p>{{ movie.overview }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

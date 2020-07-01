@@ -1,0 +1,18 @@
+<div class="container">
+  <img [src]="posterUrl" alt="{{ movie.title }}" class="image" />
+  <div class="overlay">
+    <div class="text">
+      <p class="title">{{ movie.title }}</p>
+      <p class="content">
+        <span>Release Year:</span> {{ movie.release_date.substring(0, 4) }}
+      </p>
+      <p class="content"><span>Genre:</span> {{ genre }}</p>
+      <p class="content">
+        <span>Vote Average:</span> {{ movie.vote_average }}/10
+      </p>
+      <div class="details-button">
+        <a [routerLink]="['../', movie.id]">More Details</a>
+      </div>
+    </div>
+  </div>
+</div>

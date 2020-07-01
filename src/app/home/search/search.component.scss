@@ -1,0 +1,48 @@
+@import "../../system/style/main.scss";
+
+.search {
+  height: 7vh;
+  background-color: $primary-color;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  fa-icon {
+    position: relative;
+    left: 520px;
+    width: 40px;
+    color: $white;
+    @include respond(phone) {
+      left: 320px;
+      width: 0;
+    }
+  }
+
+  & input {
+    -webkit-appearance: none;
+    outline: none;
+    border: none;
+    border-radius: 90px;
+    height: 40px;
+    width: 500px;
+    padding-left: 15px;
+    background-color: $text-body;
+    color: $white;
+    font-size: inherit;
+
+    &:focus {
+      border: 1px solid rgba($color: $white, $alpha: 0.5);
+    }
+
+    &:placeholder-shown {
+      font-size: inherit;
+      padding-left: 15px;
+    }
+
+    @include respond(phone) {
+      width: 100%;
+      height: 100%;
+      border-radius: 0;
+    }
+  }
+}

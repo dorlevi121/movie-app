@@ -1,0 +1,90 @@
+@import "../../system/style/main.scss";
+
+.carousel {
+  height: 55vh;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: bottom;
+  animation: 3.2s ease 0s 1 normal none running fade;
+
+  @include respond(phone) {
+    height: 50vh;
+  }
+
+  & .arrows {
+    position: relative;
+    top: 40%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    & .arrow {
+      cursor: pointer;
+      color: rgba($color: $white, $alpha: 0.6);
+      font-size: 5rem;
+      transition: all 0.2s ease-in-out;
+
+      &:hover {
+        color: rgba($color: $white, $alpha: 1);
+      }
+    }
+  }
+
+  & .content {
+    background-color: rgba($color: $white, $alpha: 0.4);
+    border-radius: 8px;
+    width: 500px;
+    height: 200px;
+    margin: auto;
+    margin-top: 130px;
+
+    @include respond(phone) {
+      width: 250px;
+      height: 160px;
+      margin-top: 0;
+    }
+
+    & .title {
+      text-align: center;
+      font-weight: 700;
+
+      @include respond(phone) {
+        margin: 0;
+        font-weight: 500;
+        font-size: 0.9rem;
+      }
+    }
+
+    & .overview {
+      & p {
+        margin: 10px;
+        margin-top: 0;
+        font-weight: 100;
+        font-size: $small-size;
+
+        @include respond(phone) {
+          font-size: 0.7rem;
+        }
+      }
+
+      & .info-icon {
+        font-size: 1.5rem;
+        padding-left: 15px;
+        cursor: pointer;
+
+        @include respond(phone) {
+          font-size: 1rem;
+          position: absolute;
+          left: 270px;
+          top: 320px;
+          padding: 0;
+        }
+
+        &:hover {
+          opacity: 0.7;
+        }
+      }
+    }
+  }
+}

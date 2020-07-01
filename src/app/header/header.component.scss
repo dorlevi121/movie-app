@@ -1,0 +1,43 @@
+@import "../system/style/main.scss";
+
+.header {
+  height: 7vh;
+  background-color: $primary-color;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.5rem;
+
+  @include respond(phone) {
+    height: 8vh;
+  }
+
+  & .logo {
+    cursor: pointer;
+    margin-left: 50px;
+    outline: none;
+
+    @include respond(phone) {
+      margin: auto;
+    }
+
+    & span {
+      margin-left: 10px;
+      font-weight: 700;
+      color: $white;
+    }
+  }
+
+  & .favorite {
+    margin-right: 50px;
+    cursor: pointer;
+
+    @include respond(phone) {
+      margin-right: 10px;
+    }
+  }
+}
+
+fa-icon {
+  color: $white;
+}
