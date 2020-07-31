@@ -1,1 +1,1 @@
-https://dor-movie-app.netlify.app/
+https://dorlevi.netlify.com/
